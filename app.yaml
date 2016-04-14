@@ -1,0 +1,38 @@
+application: vibhuti-singh
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+
+
+handlers:
+- url: /(.+\.(css|js))$
+  static_files: \1
+  upload: .+\.(css|js)$
+  application_readable: true
+
+
+- url: /(.+\.(jpg|png|jpeg|gif))$
+  static_files: \1
+  upload: .+\.(jpg|png|jpeg|gif)$
+  application_readable: true
+
+- url: /(.+\.(svg|eot|ttf|woff|html|pdf|mp3|wav))$
+  static_files: \1
+  upload: .+\.(svg|eot|ttf|woff|html|pdf|mp3|wav)$
+  application_readable: true
+
+
+
+- url: /.*
+  script: main.application
+
+
+libraries:
+- name: MySQLdb
+  version: latest
+- name: webapp2
+  version: latest
+- name: jinja2
+  version: latest
