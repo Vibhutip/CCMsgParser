@@ -1,0 +1,40 @@
+create database creditcardmessage
+
+CREATE TABLE RegisterCreditCard(
+	bankName VARCHAR(50), 
+	creditCardType VARCHAR(50), 
+	creditCardNumber VARCHAR(50), 
+	validityDate VARCHAR(50), 
+	bankid VARCHAR(50), 
+	datetime VARCHAR(50)
+);
+
+CREATE TABLE PaymentCreditCard(
+	creditCardNumberLastFour VARCHAR(50), 
+	amount VARCHAR(50), 
+	spentDate VARCHAR(50), 
+	bankid VARCHAR(50), 
+	datetime VARCHAR(50)
+);
+
+CREATE TABLE BillGenerator(
+	bankName VARCHAR(50), 
+	creditCardNumberLastFour VARCHAR(50), 
+	billAmount VARCHAR(50), 
+	dueDate VARCHAR(50), 
+	billGenerationDate VARCHAR(50),
+	bankid VARCHAR(50), 
+	datetime VARCHAR(50)
+);
+
+CREATE TABLE DueDatePayment(
+	creditCardNumberLastFour VARCHAR(50), 
+	billAmount VARCHAR(50), 
+	billingMonth VARCHAR(50), 
+	dueDate VARCHAR(50), 
+	paymentDate VARCHAR(50),
+	latePaymentCharges VARCHAR(50),
+	bankid VARCHAR(50), 
+	datetime VARCHAR(50)
+);
+
